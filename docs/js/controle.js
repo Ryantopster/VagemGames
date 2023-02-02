@@ -1,9 +1,10 @@
 const botoesAcao = document.querySelectorAll('.botao-acao');
 const botoesDirecao = document.querySelectorAll('.botao-direcao');
+document.querySelector('.controle').style.display = 'none';
 let botaoAcao, botaoDirecao;
 
 function mostraControle() {
-    if (window.matchMedia("(max-width: 480px)").matches) {
+    if (window.matchMedia("(max-width: 800px)").matches) {
         document.querySelector('.botoes-de-acao').style.display = 'inline-block';
         document.querySelector('.botoes-de-direcao').style.display = 'inline-block';
         document.querySelector('.controle').style.display = 'block';

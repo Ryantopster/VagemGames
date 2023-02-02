@@ -31,7 +31,7 @@ function comecarJogo(selecionaJogo)  {
                 botaoCSS.removeAttribute('class', 'botao parar');
                 botaoCSS.setAttribute('class', 'botao iniciar');
                 botaoCSS.setAttribute('value', 'Iniciar');
-                document.location.reload(true);    
+                document.location.reload(true);
             }
     });
 } 

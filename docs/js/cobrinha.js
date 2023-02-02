@@ -1,9 +1,13 @@
 function jogarCobrinha() {
-    let xCobrinha = wCanvas / 2;
-    let yCobrinha = hCanvas / 2;
-    let wCobrinha = 25;
-    let hCobrinha = 25;
-    let teclaJogador;
+    let xCobrinha, yCobrinha, wCobrinha, hCobrinha, xComida, yComida, wComida, hComida, teclaJogador;
+    wCobrinha = 25;
+    hCobrinha = 25;
+    xCobrinha = 100;
+    yCobrinha = hCanvas / 2 - hCobrinha / 2;
+    wComida = 15;
+    hComida = 15;
+    xComida = parseInt(Math.random() * (wCanvas));
+    yComida =  parseInt(Math.random() * (hCanvas));
 
     setInterval(loop,1000/60);
 
@@ -28,39 +32,64 @@ function jogarCobrinha() {
 
     function draw() {
         desenhaRetangulo(0, 0, wCanvas, hCanvas, 0, 0, 0);
-        desenhaRetangulo(xCobrinha, yCobrinha, wCobrinha, hCobrinha, 255, 255, 255);  
+        comidaCobrinha();
+        cobrinha();
         movimentaCobrinha();
         detectaColisao();
     }
 
-    function movimentaCobrinha() {
+    function cobrinha() {
+        desenhaRetangulo(xCobrinha, yCobrinha, wCobrinha, hCobrinha, 255, 255, 255);
         if (teclaJogador == 'KeyW' || botaoDirecao == 'botao-cima') {
-            yCobrinha -= 10;
+            desenhaRetangulo(xCobrinha, yCobrinha + 26, wCobrinha, hCobrinha, 255, 255, 255);
         }
         if (teclaJogador == 'KeyS' || botaoDirecao == 'botao-baixo') {
-            yCobrinha += 10;
+            desenhaRetangulo(xCobrinha, yCobrinha - 26, wCobrinha, hCobrinha, 255, 255, 255);
         }
         if (teclaJogador == 'KeyA' || botaoDirecao == 'botao-esquerdo') {
-            xCobrinha -= 10;
+            desenhaRetangulo(xCobrinha + 26, yCobrinha, wCobrinha, hCobrinha, 255, 255, 255);
         }
         if (teclaJogador == 'KeyD' || botaoDirecao == 'botao-direito') {
-            xCobrinha += 10;
+            desenhaRetangulo(xCobrinha - 26, yCobrinha, wCobrinha, hCobrinha, 255, 255, 255);
+        }
+    }
+
+    function movimentaCobrinha() {
+        if (teclaJogador == 'KeyW' || botaoDirecao == 'botao-cima') {
+            yCobrinha -= 4;
+        }
+        if (teclaJogador == 'KeyS' || botaoDirecao == 'botao-baixo') {
+            yCobrinha += 4;
+        }
+        if (teclaJogador == 'KeyA' || botaoDirecao == 'botao-esquerdo') {
+            xCobrinha -= 4;
+        }
+        if (teclaJogador == 'KeyD' || botaoDirecao == 'botao-direito') {
+            xCobrinha += 4;
         }
     }
 
     function detectaColisao() {
         if (yCobrinha <= 0) {
-            yCobrinha = 0;
+            vocePerdeu();
         }
         if (yCobrinha >= hCanvas - hCobrinha) {
-            yCobrinha = hCanvas - hCobrinha;
+            vocePerdeu();
         }
         if (xCobrinha <= 0 ) {
-            xCobrinha = 0;
+            vocePerdeu();
         }
         if (xCobrinha >= wCanvas - wCobrinha) {
-            xCobrinha = wCanvas - wCobrinha;
+            vocePerdeu();
         }
+        if (xComida + wComida / 2 >= xCobrinha && xComida + wComida / 2 <= xCobrinha + wCobrinha && yComida + hComida / 2 >= yCobrinha && yComida + hComida / 2 <= yCobrinha + hCobrinha) {
+            xComida = parseInt(Math.random() * wCanvas);
+            yComida = parseInt(Math.random() * hCanvas);
+        }
+    }
+
+    function comidaCobrinha() {
+        desenhaRetangulo(xComida, yComida, wComida, hComida, 255, 0, 0)
     }
 
     function desenhaRetangulo(x, y, w, h, r, g, b) {
@@ -68,4 +97,7 @@ function jogarCobrinha() {
         ctx.fillRect(x, y, w, h);
     }
 
+    function vocePerdeu() {
+        document.location.reload(true);
+    }
 }

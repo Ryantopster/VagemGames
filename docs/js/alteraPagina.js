@@ -5,7 +5,7 @@ document.querySelector('.sombra-bg').style.display = 'none';
 const botaoVoltarNav = document.querySelectorAll('#btnNavegacaoVoltar');
 
 //se a largura maxima da janela for igual a 480px, mostra a barra de navegação mobile, caso contrário não mostra.
-if (window.matchMedia("(max-width: 480px)").matches) {
+if (window.matchMedia("(max-width: 800px)").matches) {
     mostraNavMobile();
 } else {
     escondeNavMobile();
