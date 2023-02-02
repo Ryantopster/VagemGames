@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>VagemGames</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<link rel="icon" type="image/png" href="vagem.png">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rubik+Glitch&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="muda-tema">
+		<header>
+			<div class="caixa-nav" id="caixaNav">
+				<h1 class="titulo-cabecalho" id="tituloCabecalho">VagemGames</h1>
+				<input type="button" class="botao-navegacao" id="btnNavegacao">
+				<div class="caixa">
+					<nav>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="jogos.html">Jogos</a></li>
+							<li><a href="contato.html">Contato</a></li>
+						</ul>
+					</nav>
+					<input type="button" class="botao-navegacao-voltar" id="btnNavegacaoVoltar">
+					<div type="button" class="btn-muda-tema-nav" id="mudaTema"></div>
+				</div>
+				<div class="sombra-bg"></div>
+			</div>
+		</header>
+
+		<main>
+			<div class="btn-muda-tema" id="mudaTema"></div>
+			
+			<input type="button" class="botao iniciar" id="btn" value="Iniciar">
+			<canvas class="canvas" id="canvas" width="800" height="600"></canvas>
+
+			<div class="controle" id="controle">
+				<div class="botoes-de-direcao">
+					<input type="button" class="botao-direcao botao-cima" id="btn-cima">
+					<input type="button" class="botao-direcao botao-esquerdo" id="btn-esquerdo">
+					<input type="button" class="botao-direcao botao-direito" id="btn-direito">
+					<input type="button" class="botao-direcao botao-baixo" id="btn-baixo">
+				</div>
+				
+				<div class="botoes-de-acao">
+					<input type="button" class="botao-acao botao-triangulo" id="btn-triangulo">
+					<input type="button" class="botao-acao botao-quadrado" id="btn-quadrado">
+					<input type="button" class="botao-acao botao-bolinha" id="btn-bolinha">
+					<input type="button" class="botao-acao botao-x" id="btn-x">
+				</div>
+			</div>
+			
+			<ul class="jogos">
+				<li class="botao-jogo ping-pong">
+					<h2>Ping Pong</h2>
+					<img src="img/Ping-Pong.png">
+					<p class="jogo-descricao"></p>
+				</li>
+				<li class="botao-jogo via-expressa">
+					<h2>Via Expressa</h2>
+					<img src="img/estrada.png">
+					<p class="jogo-descricao"></p>
+				</li>
+				<li class="botao-jogo pegue-a-maca">
+					<h2>Pegue a maçã</h2>
+					<img src="img/Queda-da-maca.png">
+					<p class="jogo-descricao"></p>
+				</li>
+				<li class="botao-jogo cobrinha">
+					<h2>Cobrinha</h2>
+					<img src="img/cobrinha.png">
+					<p class="jogo-descricao"></p>
+				</li>
+				<li class="botao-jogo pac-man">
+					<h2>pac-man</h2>
+					<img src="img/pac-man.png">
+					<p class="jogo-descricao"></p>
+				</li>
+				<li class="botao-jogo tetris">
+					<h2>Tetris</h2>
+					<img src="img/tetris.png">
+					<p class="jogo-descricao"></p>
+				</li>
+				<li class="botao-jogo space-invaders">
+					<h2>Space Invaders</h2>
+					<img src="img/space-invaders.png">
+					<p class="jogo-descricao"></p>
+				</li>
+			</ul>
+			
+		</main>
+
+		<footer>
+			<img class="controle-1" src="img/controle-1.png">
+			<p class="copyright">&copy; Copyright VagemGames - 2022</p>
+		</footer>
+
+		<script src="js/jogos.js"></script>
+		<script src="js/modoNoturno.js"></script>
+		<script src="js/alteraPagina.js"></script>
+
+		<script src="js/controle.js"></script>
+		<script src="js/pingpong.js"></script>
+		<script src="js/cobrinha.js"></script>
+	</body>
+</html>
