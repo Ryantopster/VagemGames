@@ -172,6 +172,28 @@ main {
     border-radius: 2px;
 }
 
+#vocePerdeu {
+	display: block;
+	font-size: 48px;
+	text-align: center;
+	position: relative;
+	bottom: 356px;
+	color: white;
+}
+
+#btnJogarNovamente {
+	border-radius: 5px;
+	font-size: 22px;
+	border: none;
+	padding: 10px;
+	background-color: rgb(150, 200, 16);
+	color: white;
+}
+
+#btnJogarNovamente:active{
+	background-color: rgb(109, 146, 9);
+}
+
 .iniciar {
     background-color: rgb(50, 170, 50);
     color: rgb(255, 255, 255);
@@ -323,6 +345,7 @@ footer {
 	margin: px 0 0;
 }
 
+/*Define outro estilo quando a largura maxima é de 800px*/
 @media screen and (max-width:800px) {
 	/*Cabeçalho da página*/
 	.caixa-nav {

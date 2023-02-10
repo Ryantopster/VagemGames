@@ -1,0 +1,36 @@
+let xRetangulo = 50;
+let yRetangulo = 50;
+let wRetangulo = 200;
+let hRetangulo = 100;
+
+const gradient = ctx.createLinearGradient(xRetangulo, 0, wRetangulo, 0);
+
+gradient.addColorStop(0, "rgb(255, 255, 200)");
+gradient.addColorStop(1, "rgb(232, 183, 69)");
+
+criaRetangulo(xRetangulo, 200, wRetangulo, hRetangulo, 100, 0, 0, 100, 255, 0, 0);
+ctx.fillStyle = radialGradient;
+ctx.fillRect(xRetangulo, yRetangulo, wRetangulo, hRetangulo);
+
+function criaRetangulo(x, y, w, h, bce, bcd, bbd, bbe) {
+    ctx.beginPath();
+    ctx.fillStyle = gradient;
+    ctx.roundRect(x, y, w, h, [bce, bcd, bbd, bbe]);
+    ctx.fill();
+}
+
+const alteraCanvas = document.getElementById('alteraCanvas');
+alteraCanvas.innerHTML = `<canvas class="canvas" id="canvas" width="400" height="400" style="display: block;"></canvas>`;
+
+const img = new Image();
+    img.src = "/img/background.jpg";
+
+    img.addEventListener('load', ()=> {
+        ctx.drawImage(img, 280, 570, 115, 358, 50, 50, 115, 358);
+    });
+    
+function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min);
+    }

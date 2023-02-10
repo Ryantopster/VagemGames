@@ -8,7 +8,7 @@ function jogarPingPong() {
     let xRaqueteJogador = 10;
     let yRaqueteJogador = 200;
 
-    let xRaqueteOponente = 765;
+    let xRaqueteOponente = wCanvas - wRaquete - xRaqueteJogador;
     let yRaqueteOponente = 200;
 
     let xBolinha, yBolinha, xBolinhaOrientacao, yBolinhaOrientacao;
@@ -89,8 +89,8 @@ function jogarPingPong() {
     
     function desenhaPontos() {
         ctx.fillStyle = "white";
-        ctx.font = "48px monospace"
+        ctx.font = "48px monospace";
         ctx.fillText(pontosJogador, wCanvas * 1/4, 50);
-        ctx.fillText(pontosOponente, wCanvas * 3/4 - 48, 50)
+        ctx.fillText(pontosOponente, wCanvas * 3/4 - 48, 50);
     }
 }

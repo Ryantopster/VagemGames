@@ -1,9 +1,11 @@
-const btn = document.querySelectorAll('#mudaTema');
+const btnMudaTema = document.querySelectorAll('#mudaTema');
 const mudaTema = document.querySelector('.muda-tema');
 const folhaDeEstilo = document.getElementById('folhaDeEstilo');
 /* const temaDefinido = getComputedStyle(mudaTema).getPropertyValue('--icon'); */
 
 funcaoMudarTema();
+
+//faz o tema ser mudado
 function funcaoMudarTema() {
   if (localStorage.getItem('mudaTema') == null) {
     localStorage.setItem('mudaTema', 'tema-do-sistema');
@@ -48,8 +50,9 @@ function funcaoMudarTema() {
   }
 }
 
-for (let i = 0; i < btn.length; i++) {
-  const botaoMudaTema = btn[i];
+//funcionamento do botão mudar tema
+for (let i = 0; i < btnMudaTema.length; i++) {
+  const botaoMudaTema = btnMudaTema[i];
   botaoMudaTema.addEventListener('click', () => {
   switch (localStorage.getItem('mudaTema')) {
     case 'light':
