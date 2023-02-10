@@ -42,6 +42,7 @@ function jogarCobrinha() {
     });
 
     function loop() {
+        controleMobile();
         draw();
         detectaColisao();
     }
@@ -50,7 +51,6 @@ function jogarCobrinha() {
         ctx.fillStyle = `rgb(50, 130, 50)`;
         ctx.fillRect(0, 0, 544, 544);
         proximoNivel();
-        controleMobile();
         background();
         criaComida();
         criaCobrinha();
