@@ -143,14 +143,14 @@ function jogarCobrinha() {
     }
 
     function controleMobile() {
+        if (botaoDirecao == 'botao-direito') {
+            direcao = "direita";
+        }
         if (botaoDirecao == 'botao-cima') {
             direcao = "cima";
         }
         if (botaoDirecao == 'botao-baixo') {
             direcao = "baixo";
-        }
-        if (botaoDirecao == 'botao-direito') {
-            direcao = "direita";
         }
         if (botaoDirecao == 'botao-esquerdo') {
             direcao = "esquerda";
@@ -218,6 +218,7 @@ function jogarCobrinha() {
         var jogarNovamente = document.querySelector('#btnJogarNovamente');
         jogarNovamente.addEventListener('click', () => {
             direcao = "direita";
+            botaoDirecao = 'botao-direito'
             pontosCobrinha = 0;
             nivel = 1;
             cobrinha = [1, 2, 3];

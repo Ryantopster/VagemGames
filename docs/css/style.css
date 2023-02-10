@@ -539,6 +539,28 @@ footer {
 		margin: 0 auto;
 	}
 
+	#vocePerdeu {
+		display: block;
+		font-size: 16px;
+		text-align: center;
+		position: relative;
+		bottom: 180px;
+		color: white;
+	}
+	
+	#btnJogarNovamente {
+		border-radius: 5px;
+		font-size: 12px;
+		border: none;
+		padding: 10px;
+		background-color: rgb(150, 200, 16);
+		color: white;
+	}
+	
+	#btnJogarNovamente:active{
+		background-color: rgb(109, 146, 9);
+	}
+
 	.jogos {
 		width: auto;
 		padding: 0;
