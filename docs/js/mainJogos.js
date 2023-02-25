@@ -70,8 +70,7 @@ function setup(selecionaJogo) {
             jogarPingPong();
             break;
         case 'via-expressa':
-            alert("Em desenvolvimento");
-            document.location.reload(true); 
+            jogarViaExpressa();
             break;
         case 'pegue-a-maca':
             jogarPegueAMaca(); 

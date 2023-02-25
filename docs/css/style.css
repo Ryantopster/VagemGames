@@ -286,13 +286,6 @@ form label, form legend {
 	width: 50%;
 }
 
-.selecione-o-jogo {
-	margin: 10px 20px;
-	background: rgb(232, 183, 69);
-	border: none;
-	border-radius: 5px;
-}
-
 .enviar {
 	display: block;
 	margin: 0px auto;
@@ -342,7 +335,12 @@ footer {
 .copyright {
 	color: var(--color-foreground);
 	font-size: 13px;
-	margin: px 0 0;
+}
+
+.site-comine-corp {
+	color: var(--color-foreground);
+	font-size: 13px;
+	margin: 2px 0;
 }
 
 /*Define outro estilo quando a largura maxima é de 800px*/

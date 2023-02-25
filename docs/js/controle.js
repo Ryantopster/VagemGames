@@ -18,7 +18,6 @@ for (let i = 0; i < botoesAcao.length; i++) {
     const selecionaBotao = botoesAcao[i].classList[1];
     btnAcao.addEventListener('click', () => {
         botaoAcao = selecionaBotao;
-        console.log(botaoAcao)
     });
 }
 
@@ -29,5 +28,6 @@ for (let i = 0; i < botoesDirecao.length; i++) {
     btnDirecao.addEventListener('click', () => {
         botaoDirecao = selecionaBotao;
     });
+    
 }
 

@@ -12,7 +12,6 @@ function jogarCobrinha() {
     
     let direcao = "direita";
     let pontosCobrinha = 0;
-    let nivel = 1;
 
     //quanto maior o numeo de elementos na array, maior o tamanho da cobra
     let cobrinha = [1, 2, 3];
@@ -50,7 +49,6 @@ function jogarCobrinha() {
     function draw() {
         ctx.fillStyle = `rgb(50, 130, 50)`;
         ctx.fillRect(0, 0, 544, 544);
-        proximoNivel();
         background();
         criaComida();
         criaCobrinha();
@@ -126,7 +124,7 @@ function jogarCobrinha() {
     function mostraNivel() {
         ctx.fillStyle = "black";
         ctx.font = "bold 20px monospace"
-        ctx.fillText("Nivel: " + nivel, 16, 15);
+        ctx.fillText("Pontuação: " + pontosCobrinha, 16, 15);
     }
 
     function detectaColisao() {
@@ -154,49 +152,6 @@ function jogarCobrinha() {
         }
         if (botaoDirecao == 'botao-esquerdo') {
             direcao = "esquerda";
-        }
-    }
-
-    function proximoNivel() {
-        if (pontosCobrinha >= 10) {
-            nivel = 2;
-            
-            if (cobrinha[0].x > wCanvas && direcao == "direita") {
-                cobrinha[0].x = wCanvas - caixa;
-            };
-            if (cobrinha[0].x < 0 && direcao == "esquerda") {
-                cobrinha[0].x = 0;
-            };
-            if (cobrinha[0].y > hCanvas && direcao == "baixo") {
-                cobrinha[0].y = hCanvas - caixa;
-            };
-            if (cobrinha[0].y < 0 && direcao == "cima") {
-                cobrinha[0].y = 0;
-            };
-        }
-        if (pontosCobrinha >= 20) {
-            nivel = 3;
-            if (cobrinha[0].x > wCanvas && direcao == "direita") {
-                clearInterval(jogo);
-                ctx.fillStyle = `rgba(255, 255, 255, 1)`;
-                ctx.roundRect((wCanvas / 2) - (128 / 2), (hCanvas / 2) - (128 / 2), 128, 128, 20);
-                pontosCobrinha = 0;
-            };
-            if (cobrinha[0].x < 0 && direcao == "esquerda") {
-                clearInterval(jogo);
-                alert("Você perdeu!");
-                pontosCobrinha = 0;
-            };
-            if (cobrinha[0].y > hCanvas && direcao == "baixo") {
-                clearInterval(jogo);
-                alert("Você perdeu!");
-                pontosCobrinha = 0;
-            };
-            if (cobrinha[0].y < 0 && direcao == "cima") {
-                clearInterval(jogo);
-                alert("Você perdeu!");
-                pontosCobrinha = 0;
-            };
         }
     }
 
